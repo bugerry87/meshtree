@@ -142,5 +142,5 @@ def main(args):
 if __name__ == '__main__':
 	main_args = init_main_args()
 	main_args = init_meshtree_args([main_args])
-	args, _ = main_args.parse_args()
+	args, _ = main_args.parse_known_args()
 	main(args)
