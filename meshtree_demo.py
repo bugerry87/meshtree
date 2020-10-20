@@ -109,7 +109,7 @@ def main(args):
 		**args.__dict__
 		)
 	
-	print("\n0%					  |50%					 |100%")
+	print("\n0%					  |50%					 |100% explored")
 	dist, mp, nn = tree.query(P)
 	
 	print("\nQuery time:", next(delta))
@@ -141,6 +141,6 @@ def main(args):
 
 if __name__ == '__main__':
 	main_args = init_main_args()
-	init_meshtree_args([main_args])
-	args, _ = main_args.parse_known_args()
+	main_args = init_meshtree_args([main_args])
+	args, _ = main_args.parse_args()
 	main(args)

@@ -51,45 +51,27 @@ def init_meshtree_args(parents=[], subparser=None):
 			)
 	
 	parser.add_argument(
-		'--model_size', '-m',
-		metavar='INT',
-		type=int,
-		default=30000
-		)
-	
-	parser.add_argument(
-		'--query_size', '-q',
-		metavar='INT',
-		type=int,
-		default=30000
-		)
-	
-	parser.add_argument(
 		'--batch_size', '-b',
 		metavar='INT',
 		type=int,
-		default=0
+		default=0,
+		help='Split the query into sub queries (default=0)'
 		)
 	
 	parser.add_argument(
 		'--leaf_size', '-l',
 		metavar='INT',
 		type=int,
-		default=1000
+		default=1000,
+		help='Shapes per leaf node, swaps into brute force search (default=1000)'
 		)
 	
 	parser.add_argument(
 		'--jobs', '-j',
 		metavar='INT',
 		type=int,
-		default=1
-		)
-	
-	parser.add_argument(
-		'--seed', '-s',
-		metavar='INT',
-		type=int,
-		default=0
+		default=1,
+		help='Number of parallel jobs (default=1)'
 		)
 	
 	return parser
