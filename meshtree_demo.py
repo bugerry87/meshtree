@@ -5,10 +5,11 @@ from argparse import ArgumentParser
 from time import time
 
 ## Installed
+import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
-import meshtree
+from meshtree import MeshTree, init_meshtree_args
 
 
 def init_main_args(parents=[]):
@@ -22,7 +23,7 @@ def init_main_args(parents=[]):
 		parser: The ArgumentParsers.
 	"""
 	parser = ArgumentParser(
-		description=__description__,
+		description='A K(N)DTree for spatial queries on mesh like structures.',
 		conflict_handler='resolve',
 		parents=parents
 		)
@@ -140,6 +141,6 @@ def main(args):
 
 if __name__ == '__main__':
 	main_args = init_main_args()
-	meshtree.init_meshtree_args([main_args])
+	init_meshtree_args([main_args])
 	args, _ = main_args.parse_known_args()
 	main(args)

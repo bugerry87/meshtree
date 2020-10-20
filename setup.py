@@ -18,6 +18,6 @@ setup(
     ],
     keywords='3d mesh nearest-neighbor kdtree',
     packages=['meshtree'],
-	scripts=['tools/meshtree'],
+	scripts=['meshtree_demo.py'],
 	install_requires=['numpy']
 )
